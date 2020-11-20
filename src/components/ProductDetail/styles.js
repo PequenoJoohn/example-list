@@ -1,33 +1,33 @@
 import styled from 'styled-components';
 
 export const ProductWrapper = styled.div`
-   
-   ul {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        justify-items:center;
-        align-items: center;
-
-        li {
-            display: grid;
-            grid-template-rows: 200px 0px 50px 10px;
-            align-items: center;
-            justify-items:center;
-            /* background: #022; */
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 300px;
-            height: 300px;
-            margin: 10px;
-            text-align: center;
-            font-family: 'Rubik-Bold', sans-serif;
+   display: flex;
 
 
-            img {
-                width: 100px;
-               background-size: cover;
+   .button-return {
+       padding: 25px 0px 0px 50px;
+   }
+   .productView {
+       padding: 50px;
+       h1 {
+           font-size: 24px;
+           font-family: Arial, Helvetica, sans-serif;
+           margin-bottom: 20px;
+       }
+       p {
+           font-size: 18px;
+
+           &:nth-child(1n+2) {
+               padding-top: 10px;
+               font-family: Arial, Helvetica, sans-serif;
            }
+       }
+       img {
+           width: 120px;
+       }
+
+       button {
+            margin-top: 20px;
        }
    }
 `;
