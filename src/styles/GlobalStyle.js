@@ -44,4 +44,9 @@ export default createGlobalStyle`
         border-collapse: collapse;
         border-spacing: 0;
     }
+
+    @font-face {
+        font-family: 'Rubik-Bold' ;
+        src: url('../assets/Rubik-Bold.ttf') format('ttf') ;
+    }
 `;

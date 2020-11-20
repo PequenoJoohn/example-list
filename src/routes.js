@@ -1,16 +1,14 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 import Home from './pages/Home';
-import GlobalStyle from './styles/GlobalStyle';
+import ProductDetail from './pages/Product';
 
 export default function Routes() {
     return (
-        <BrowserRouter>
-            <Switch>
-                <Route exact path="/" component={Home} />
-            </Switch>
-            <GlobalStyle/>
-        </BrowserRouter>
+        <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/product/:id" component={ProductDetail} />
+        </Switch>
     );
 }

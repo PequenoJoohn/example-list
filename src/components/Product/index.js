@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import api from '../../services/api';
 
-import { Productrapper } from './styles';
+import { ProductWrapper } from './styles';
 
-export default function Product() {
+import defaultImage from '../../assets/image-placeholder.svg';
+
+export default function Product(props) {
 
     const [products, setProducts] = useState([]);
 
@@ -15,21 +18,21 @@ export default function Product() {
             setProducts(products.data.data.allSkus);
         }
         fetchData();
-    }, [])
+    }, []);
 
     return (
-        <>
-            <Productrapper>
+        <ProductWrapper>
+            <ul>
                 {products.map(product => (
                     <li key={product.id}>
-                        <img src={product.imageUrl} alt=""/>
+                        <img src={product.imageUrl ? product.imageUrl : defaultImage} alt="" />
                         <h1>{product.name}</h1>
-                        <p>{product.salePrice}</p>
-                        <button>Ver detalhes</button>
+                        <p>{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format((String(product.salePrice).slice(0, -2)))}</p>
+                        <Link to={`/product/${product.id}`}>Ver detalhes</Link>
                     </li>
                 ))}
-            </Productrapper>
-        </>
+            </ul>
+        </ProductWrapper>
     )
 }
 
