@@ -6,11 +6,10 @@ import { ProductWrapper } from './styles';
 
 import defaultImage from '../../assets/image-placeholder.svg';
 
-export default function Product(props) {
+export default function Product() {
 
     const [products, setProducts] = useState([]);
 
-    
     useEffect(() => {
         async function fetchData() {
             const query = `{allSkus{id name salePrice imageUrl}}`;
@@ -27,8 +26,12 @@ export default function Product(props) {
                     <li key={product.id}>
                         <img src={product.imageUrl ? product.imageUrl : defaultImage} alt="" />
                         <h1>{product.name}</h1>
-                        <p>{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format((String(product.salePrice).slice(0, -2)))}</p>
-                        <Link to={`/product/${product.id}`}>Ver detalhes</Link>
+                        {Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(product.salePrice).length >= 12 ?
+                            <p>{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(product.salePrice).replace('.', '').replace(/(\d{3})/, "$1.").replace(',', '').substr(0, 9)} </p>
+                            :
+                            <p> {Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(product.salePrice).replace('.', '').replace(/(\d{2})/, "$1.").replace(',', '').substr(0, 8)}</p>
+                        }
+                        <Link className="link" to={`/product/${product.id}`}>Ver detalhes</Link>
                     </li>
                 ))}
             </ul>

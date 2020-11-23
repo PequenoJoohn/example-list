@@ -28,6 +28,8 @@ export default createGlobalStyle`
     }
     body {
         line-height: 1;
+        background: #F2F2F2;
+        font-family: 'Rubik', sans-serif;
     }
     ol, ul {
         list-style: none;
@@ -45,8 +47,8 @@ export default createGlobalStyle`
         border-spacing: 0;
     }
 
-    @font-face {
-        font-family: 'Rubik-Bold' ;
-        src: url('../assets/Rubik-Bold.ttf') format('ttf') ;
+    :root {
+        --black: #212529;
+        --white: #f8f9fa;
     }
 `;

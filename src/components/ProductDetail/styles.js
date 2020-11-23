@@ -3,17 +3,31 @@ import styled from 'styled-components';
 export const ProductWrapper = styled.div`
    display: flex;
 
-
-   .button-return {
+    .button-return {
        padding: 25px 0px 0px 50px;
-   }
-   .productView {
+    }
+
+   .link {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        color: var(--black);
+        transition: 0.3s;
+
+        &:hover {
+            color: #ccc;
+        }
+    }
+
+    .productView {
        padding: 50px;
+
        h1 {
            font-size: 24px;
            font-family: Arial, Helvetica, sans-serif;
            margin-bottom: 20px;
        }
+       
        p {
            font-size: 18px;
 

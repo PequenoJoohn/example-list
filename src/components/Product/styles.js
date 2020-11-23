@@ -10,19 +10,34 @@ export const ProductWrapper = styled.div`
         align-items: center;
 
         li {
-            display: grid;
-            grid-template-rows: 200px 0px 50px 10px;
             align-items: center;
-            justify-items:center;
-            /* background: #022; */
+            border-radius: 25px;
             border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 300px;
+            display: grid;
+            grid-template-rows: 200px 10px 50px 0px;
+            font-family: 'Rubik', sans-serif;
             height: 300px;
+            justify-items:center;
             margin: 10px;
             text-align: center;
-            font-family: 'Rubik-Bold', sans-serif;
+            width: 300px;
+            background: #f8f9fa;
 
+            .link {
+                text-decoration: none;
+                color: var(--white);
+                transition: 0.3s;
+                background: var(--black);
+                padding: 5px;
+                border-radius: 5px;
+                border: 1px solid transparent;
+
+                &:hover {
+                    background: var(--white);
+                    color: var(--black);
+                    border: 1px solid var(--black);
+                }
+            }
 
             img {
                 width: 100px;
