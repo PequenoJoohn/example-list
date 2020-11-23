@@ -7,7 +7,7 @@ export const ProductWrapper = styled.div`
         font-size: 36px;
     }
    
-    ul {
+    .scrollInfinite {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
