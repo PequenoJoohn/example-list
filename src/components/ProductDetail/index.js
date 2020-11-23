@@ -85,7 +85,7 @@ const ProductDetail = (props) => {
             <ProductWrapper>
                 <div>
                     <div className="button-return" >
-                        <Link className="link" to="/"><BiChevronLeft />Voltar</Link>
+                        <Link className="link" to="/"><BiChevronLeft />Produtos</Link>
                     </div>
                     <div className="productView">
 
@@ -116,10 +116,10 @@ const ProductDetail = (props) => {
                                         :
                                         <p>Preço Promocional: {Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(product.promotionalPrice).replace('.', '').replace(/(\d{2})/, "$1.").replace(',', '').substr(0, 8)}</p>
                                     }
-                                    <p>Peso: {product.package?.weight}</p>
-                                    <p>Altura: {product.package?.height}</p>
-                                    <p>Largura: {product.package?.width}</p>
-                                    <p>Profundidade: {product.package?.depth}</p>
+                                    <p>Peso: {product.package?.weight} kg</p>
+                                    <p>Altura: {product.package?.height} cm</p>
+                                    <p>Largura: {product.package?.width} cm</p>
+                                    <p>Profundidade: {product.package?.depth} cm</p>
                                 </>
                             }
                             {edit ?

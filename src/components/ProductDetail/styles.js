@@ -41,7 +41,24 @@ export const ProductWrapper = styled.div`
        }
 
        button {
+            background: var(--black);
+            border-radius: 5px;
+            border: 1px solid transparent;
+            color: var(--white);
             margin-top: 20px;
+            padding: 5px;
+            transition: 0.3s;
+            text-decoration: none;
+            
+            &:nth-child(1n+2) {
+                margin-left: 5px;
+            }
+
+            &:hover {
+                background: var(--white);
+                border: 1px solid var(--black);
+                color: var(--black);
+            }
        }
    }
 `;

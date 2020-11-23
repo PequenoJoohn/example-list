@@ -1,8 +1,13 @@
 import styled from 'styled-components';
 
 export const ProductWrapper = styled.div`
+
+    > h1 {
+        padding: 50px 0 30px 50px;
+        font-size: 36px;
+    }
    
-   ul {
+    ul {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
@@ -14,7 +19,7 @@ export const ProductWrapper = styled.div`
             border-radius: 25px;
             border: 1px solid #ccc;
             display: grid;
-            grid-template-rows: 200px 10px 50px 0px;
+            grid-template-rows: 180px 10px 50px 40px;
             font-family: 'Rubik', sans-serif;
             height: 300px;
             justify-items:center;
@@ -44,5 +49,9 @@ export const ProductWrapper = styled.div`
                background-size: cover;
            }
        }
+   }
+
+   .promotional {
+    text-decoration: line-through;
    }
 `;
